@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Janob Rasul 2022</string>
+    <string name="notification_channel_name">Music Channel</string>
+    <string name="notification_channel_description">Shows currently playing music</string>
+    <string name="share">Ulashish</string>
+    <string name="baholash">Baholash</string>
+    <string name="choose_app">Dasturni tanlang</string>
+</resources>
