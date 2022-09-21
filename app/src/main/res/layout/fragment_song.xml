@@ -26,7 +26,7 @@
             android:id="@+id/bottomLayout"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:background="@color/bg_color"
+            android:background="@color/md_theme_background"
             android:paddingVertical="4dp"
             android:paddingStart="8dp">
 
@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:textColor="@color/text_color"
+                    android:textColor="@color/md_theme_onBackground"
                     android:textSize="24sp"
                     tools:text="Title" />
 
@@ -108,7 +108,7 @@
         android:ellipsize="end"
         android:gravity="center"
         android:maxLines="1"
-        android:textColor="@color/text_color"
+        android:textColor="@color/md_theme_onBackground"
         android:textSize="32sp"
         tools:text="Title" />
 

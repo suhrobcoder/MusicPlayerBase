@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="text_color">#FFFFFFFF</color>
-    <color name="bg_color">#FF000000</color>
-    <color name="gray">#757575</color>
+
+    <color name="md_theme_primary">#FFB68C</color>
+    <color name="md_theme_onPrimary">#532200</color>
+    <color name="md_theme_primaryContainer">#753400</color>
+    <color name="md_theme_onPrimaryContainer">#FFDBC9</color>
+    <color name="md_theme_secondary">#FFB2B7</color>
+    <color name="md_theme_onSecondary">#67021C</color>
+    <color name="md_theme_secondaryContainer">#861E30</color>
+    <color name="md_theme_onSecondaryContainer">#FFDADB</color>
+    <color name="md_theme_tertiary">#CCC992</color>
+    <color name="md_theme_onTertiary">#333208</color>
+    <color name="md_theme_tertiaryContainer">#4A481D</color>
+    <color name="md_theme_onTertiaryContainer">#E9E5AB</color>
+    <color name="md_theme_error">#FFB4AB</color>
+    <color name="md_theme_errorContainer">#93000A</color>
+    <color name="md_theme_onError">#690005</color>
+    <color name="md_theme_onErrorContainer">#FFDAD6</color>
+    <color name="md_theme_background">#201A17</color>
+    <color name="md_theme_onBackground">#ECE0DB</color>
+    <color name="md_theme_surface">#201A17</color>
+    <color name="md_theme_onSurface">#ECE0DB</color>
+    <color name="md_theme_surfaceVariant">#52443C</color>
+    <color name="md_theme_onSurfaceVariant">#D7C2B8</color>
+    <color name="md_theme_outline">#9F8D84</color>
+    <color name="md_theme_inverseOnSurface">#201A17</color>
+    <color name="md_theme_inverseSurface">#ECE0DB</color>
+    <color name="md_theme_inversePrimary">#97480E</color>
+    <color name="md_theme_shadow">#000000</color>
+    <color name="md_theme_surfaceTint">#FFB68C</color>
+    <color name="md_theme_surfaceTintColor">#FFB68C</color>
 </resources>

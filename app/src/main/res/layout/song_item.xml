@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             tools:text="Title"
             android:textSize="20sp"
-            android:textColor="@color/text_color"
+            android:textColor="@color/md_theme_onBackground"
             android:maxLines="1"
             android:ellipsize="end"
             android:id="@+id/song_title"/>
