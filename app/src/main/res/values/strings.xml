@@ -5,4 +5,6 @@
     <string name="share">Ulashish</string>
     <string name="baholash">Baholash</string>
     <string name="choose_app">Dasturni tanlang</string>
+    <string name="similar_apps">Boshqa dasturlar</string>
+    <string name="developer_name">Shakhzod Ruzimboev</string>
 </resources>

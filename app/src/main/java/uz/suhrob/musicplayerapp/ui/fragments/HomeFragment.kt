@@ -1,6 +1,7 @@
 package uz.suhrob.musicplayerapp.ui.fragments
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.*
 import androidx.core.view.MenuHost
@@ -79,6 +80,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     R.id.rate_menu -> {
                         Timber.d("AppDebug Rate Menu")
                         rateApp()
+                        true
+                    }
+                    R.id.similar_apps -> {
+                        Timber.d("AppDebug Similar Apps Menu")
+                        requireActivity().startActivity(
+                            Intent(
+                                Intent.ACTION_VIEW,
+                                Uri.parse("https://play.google.com/store/apps/dev?id=${getString(R.string.developer_name)}")
+                            )
+                        )
                         true
                     }
                     else -> false

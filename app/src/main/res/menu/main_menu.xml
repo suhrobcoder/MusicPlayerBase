@@ -12,4 +12,9 @@
         android:icon="@drawable/ic_rate"
         android:id="@+id/rate_menu"
         app:showAsAction="ifRoom" />
+
+    <item
+        android:title="@string/similar_apps"
+        android:id="@+id/similar_apps"
+        app:showAsAction="never" />
 </menu>
