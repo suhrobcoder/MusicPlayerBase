@@ -62,4 +62,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onBackPressed() {
+        if (binding.root.panelState == SlidingUpPanelLayout.PanelState.EXPANDED) {
+            binding.root.panelState = SlidingUpPanelLayout.PanelState.COLLAPSED
+        } else {
+            super.onBackPressed()
+        }
+    }
 }
