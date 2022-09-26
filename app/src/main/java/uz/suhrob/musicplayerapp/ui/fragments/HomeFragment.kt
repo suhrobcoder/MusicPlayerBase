@@ -1,5 +1,6 @@
 package uz.suhrob.musicplayerapp.ui.fragments
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -10,13 +11,11 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdRequest
-import com.google.android.play.core.review.ReviewManagerFactory
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 import uz.suhrob.musicplayerapp.BuildConfig
 import uz.suhrob.musicplayerapp.R
 import uz.suhrob.musicplayerapp.data.model.Song
-import uz.suhrob.musicplayerapp.data.pref.AppPref
 import uz.suhrob.musicplayerapp.databinding.FragmentHomeBinding
 import uz.suhrob.musicplayerapp.other.Resource
 import uz.suhrob.musicplayerapp.ui.BaseFragment
@@ -32,9 +31,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     @Inject
     lateinit var songAdapter: SongAdapter
-
-    @Inject
-    lateinit var appPref: AppPref
 
     private var currentPlayingSong: Song? = null
 
@@ -119,18 +115,20 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     private fun rateApp() {
-        val reviewManager = ReviewManagerFactory.create(requireContext())
-        val request = reviewManager.requestReviewFlow()
-        request.addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-                val reviewInfo = task.result
-                val flow = reviewManager.launchReviewFlow(requireActivity(), reviewInfo)
-                flow.addOnCompleteListener {
-                    appPref.setReviewed()
-                }
-            } else {
-                Timber.d("Review Error ${task.exception?.message}")
-            }
+        try {
+            startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("market://details?id=" + BuildConfig.APPLICATION_ID)
+                )
+            )
+        } catch (e: ActivityNotFoundException) {
+            startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("http://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID)
+                )
+            )
         }
     }
 }
