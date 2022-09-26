@@ -87,7 +87,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                         requireActivity().startActivity(
                             Intent(
                                 Intent.ACTION_VIEW,
-                                Uri.parse("https://play.google.com/store/apps/dev?id=${getString(R.string.developer_name)}")
+                                Uri.parse("https://play.google.com/store/apps/developer?id=${getString(R.string.developer_name)}")
                             )
                         )
                         true
