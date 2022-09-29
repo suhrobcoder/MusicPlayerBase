@@ -3,11 +3,14 @@ package uz.suhrob.musicplayerapp.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.google.android.gms.ads.MobileAds
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 import uz.suhrob.musicplayerapp.databinding.ActivityMainBinding
+import uz.suhrob.musicplayerapp.ui.viewmodels.MainViewModel
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -15,8 +18,13 @@ class MainActivity : AppCompatActivity() {
 
     var onPanelSlide: ((Float) -> Unit)? = null
 
+    private val viewModel by viewModels<MainViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val splashScreen = installSplashScreen()
+        splashScreen.setKeepOnScreenCondition { !viewModel.loaded }
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

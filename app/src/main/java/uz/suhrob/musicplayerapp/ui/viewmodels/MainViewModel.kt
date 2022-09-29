@@ -29,6 +29,7 @@ class MainViewModel @Inject constructor(
     val playbackState = musicServiceConnection.playbackState
     val repeatMode = musicServiceConnection.repeatMode
     val shuffleEnabled = musicServiceConnection.shuffleEnabled
+    var loaded = false
 
     init {
         Timber.d("Mainviewmodel initialized")
@@ -52,6 +53,7 @@ class MainViewModel @Inject constructor(
                         )
                     }
                     _mediaItems.postValue(Resource.Success(items))
+                    loaded = true
                 }
             })
     }
