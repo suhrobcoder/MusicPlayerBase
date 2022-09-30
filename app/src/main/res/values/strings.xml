@@ -7,4 +7,9 @@
     <string name="choose_app">Dasturni tanlang</string>
     <string name="similar_apps">Boshqa dasturlar</string>
     <string name="developer_name">Shakhzod+Ruzimboev</string>
+    <string name="rate_dialog_title">Dasturni baholash</string>
+    <string name="rate_dialog_message">Dastur sizga yoqqan bo\'lsa iltimos dasturni baholang</string>
+    <string name="rate_dialog_ok">Baholash</string>
+    <string name="rate_dialog_cancel">Keyinroq eslatish</string>
+    <string name="rate_dialog_no">Yo\'q</string>
 </resources>

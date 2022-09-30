@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.google.android.gms.ads.MobileAds
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import dagger.hilt.android.AndroidEntryPoint
+import hotchemi.android.rate.AppRate
 import timber.log.Timber
 import uz.suhrob.musicplayerapp.databinding.ActivityMainBinding
 import uz.suhrob.musicplayerapp.ui.viewmodels.MainViewModel
@@ -44,6 +46,16 @@ class MainActivity : AppCompatActivity() {
                 Timber.d("onPanelStateChanged $newState")
             }
         })
+
+        AppRate.with(this)
+            .setInstallDays(3)
+            .setLaunchTimes(3)
+            .setRemindInterval(1)
+            .setShowLaterButton(true)
+            .setDebug(false)
+            .monitor()
+
+        AppRate.showRateDialogIfMeetsConditions(this)
     }
 
     override fun onBackPressed() {
